@@ -11,12 +11,15 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int month;
         System.out.print("Enter your birth month (1-12): ");
-        month = scan.nextInt();
-        if (month >= 1 && month <= 12){
-            System.out.println("Your birth month is: " + month);
-        } else {
-            System.out.println("You entered an incorrect month value: " + month);
-        }
+        if(scan.hasNextInt()){
+            month = scan.nextInt();
+            if (month >= 1 && month <= 12){
+                System.out.println("Your birth month is: " + month);
+            } else {
+                System.out.println("You entered an incorrect month value: " + month);
+            }
+        } else System.out.println("Error: Invalid Input.");
+
 
     }
 }
